@@ -1,0 +1,68 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Clone</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+<body>
+<nav>
+    <div class="nav-wrapper">
+        <div class="container">
+            <a style="font-weight:bold;color:red" href="/" class="brand-logo">CRAGLIST CLONE</a>
+            <ul id="nav-mobile" class="right">
+                <li><a style="font-family:verdana; font-weight:bold" href="/">Home</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <h1 style="text-align:center">what you want to search?</h1>
+    <div class="row">
+        <div class="col s4">
+            <div class="center">
+                <i class="large material-icons" style="color:#EE6E73">flash_on</i>
+                <p>hey</p>
+                <p class="light center">Scrape away right here with a beautiful GUI.</p>
+            </div>
+        </div>
+
+        <div class="col s4">
+            <div class="center">
+                <i class="large material-icons" style="color:red">camera</i>
+                <p>filter your search</p>
+                <p class="light center">nice gui.</p>
+            </div>
+        </div>
+
+        <div class="col s4">
+            <div class="center">
+                <i class="large material-icons" style="orange">chrome_reader_mode</i>
+                <p>filter your search</p>
+                <p class="light center">we build it with heart</p>
+
+            </div>
+
+        </div>
+    </div>
+    <form action="{% url 'new_search' %}" method="post">
+        {% csrf_token %}
+        <input type="text" name="search" placeholder="search">
+        <button class="btn waves-effect waves-light" type="submit" name="action">Search
+            <i class="material-icons right">send</i>
+        </button>
+    </form>
+
+
+    {% block content %}
+
+    {% endblock content %}
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>

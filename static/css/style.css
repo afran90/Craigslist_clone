@@ -1,0 +1,23 @@
+.card {
+    height: 400px;
+    overflow: hidden;
+    transition: 0.5s ease;
+    cursor:pointer;
+}
+
+.card-image img{
+    height: 250px;
+    overflow: hidden;
+}
+
+.card:hover {
+transform:scale(1.2);
+}
+
+.nav-wrapper{
+background-color: 	#1E90FF;
+}
+
+body{
+
+background-color:#F5FFFA}
